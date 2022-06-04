@@ -33,7 +33,7 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: ${{secrets.DOCKER_USERNAME }}/javier_angular:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/javier_angular:latest
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
