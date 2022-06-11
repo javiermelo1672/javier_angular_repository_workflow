@@ -5,7 +5,7 @@
 #EXPOSE 80
 FROM node:13.14.0-alpine as node
 WORKDIR /app
-COPY javier_melo_angular_app/package*.json ./
+COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
