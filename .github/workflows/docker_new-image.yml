@@ -35,5 +35,11 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/javier_angular:latest
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+# La imagen se genera en la fila 29
+# no se requieren estas líneas
+#    - name: Build the Docker image
+#      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+# En los ejemplos se muestra el código que resulta de crear la imagen
+    - name: digest de la imagen
+      run: echo ${{ steps.docker_build.outputs.digest }}
